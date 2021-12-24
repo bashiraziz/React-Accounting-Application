@@ -656,7 +656,7 @@ const Actual = () => {
                         {/* Tabs content */}
                         <div className="tab-content" id="ex2-content">
                             <div className="tab-pane fade show active container border" id="ex3-tabs-1" role="tabpanel" aria-labelledby="ex3-tab-1">
-                                <h3 className="text-warning mt-3 mb-3">Enter the Value for the drop down : -</h3>
+                                <h3 className="text-warning mt-3 mb-3">Enter a new account : -</h3>
                                 {/* The Drop down for selecting the option  */}
                                 <input placeholder="Enter any text eg: 'A value' " className="form-control txt-field" value={option} onChange={(e) => setOption(e.target.value)} type="text" />
                                 <br />
@@ -678,10 +678,10 @@ const Actual = () => {
                                                                     <h3>#</h3>
                                                                 </th> */}
                                                                 <th>
-                                                                    <h4 className="text-success">DropDown Values</h4>
+                                                                    <h4 className="text-success">Accounts</h4>
                                                                 </th>
                                                                 <th>
-                                                                    <h4 className="text-warning">EDIT</h4>
+                                                                    <h4 className="text-warning">Edit</h4>
                                                                 </th>
                                                                 <th>
                                                                     <h4 className="text-danger">

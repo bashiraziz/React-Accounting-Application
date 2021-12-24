@@ -74,7 +74,7 @@ const Header = (props) => {
                     {/* Left links */}
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li>
-                            <h2 className="navbar-brand navbar-text">T Account</h2>
+                            <h2 className="navbar-brand navbar-text">T Accounts Rule!</h2>
                         </li>
                         {/* Notification dropdown */}
                         <li className="nav-item dropdown">

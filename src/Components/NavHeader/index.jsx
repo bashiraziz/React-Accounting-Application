@@ -14,7 +14,7 @@ const NavHeader = (props) => {
             {/* As a heading */}
             <nav className={`NavHeader1`}>
                 <div className="navTextDiv container-fluid">
-                    <span onClick={() => MoveTo(`/`)} className="navheader-text mb-0">Welcome to T Account</span>
+                    <span onClick={() => MoveTo(`/`)} className="navheader-text mb-0">Welcome to T Accounts</span>
                 </div>
             </nav>
         </>

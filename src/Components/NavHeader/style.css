@@ -2,7 +2,7 @@
 .NavHeader1 {
     height: 60px;
     border-top: 1px solid rgb(199, 199, 199);
-    background-color: #9e9bbb;
+    background-color: grey;
 }
 
 /* // This is the Navigation Header Components */
@@ -11,7 +11,7 @@
     margin-right: 20px !important;
 }
 .navheader-text {
-    color: rgb(131, 143, 153) !important;
+    color: white!important;
     font-weight: 500;
     font-size: 20px !important;
     line-height: 60px;

@@ -646,7 +646,7 @@ const Actual = () => {
                         {/* Tabs navs */}
                         <ul className="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true">COA</a>
+                                <a className="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true" color="black">COA</a>
                             </li>
                             <li className="nav-item" role="presentation">
                                 <a className="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false">T-Accounts</a>

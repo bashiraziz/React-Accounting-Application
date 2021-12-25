@@ -42,4 +42,7 @@ button{
     {
         width: 90%;
     }   
+    button{
+        color: #66c2ff;
+    }
 }

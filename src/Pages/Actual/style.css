@@ -146,4 +146,7 @@ button{
         display: block;
         width: 100%;
     }
+    button{
+        color: #66c2ff;
+    }
 }

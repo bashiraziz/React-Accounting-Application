@@ -3,9 +3,6 @@
 body,html,h1,h2,h3,h4,h5,h6,p,button{
     font-family: 'Open Sans', sans-serif !important;
 }
-button{
-    background-color: #66c2ff;
-}
 
 .container-own
 {
@@ -43,6 +40,6 @@ button{
         width: 90%;
     }   
     button{
-        color: #66c2ff;
+        background-color: #66c2ff;
     }
 }

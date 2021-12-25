@@ -10,13 +10,9 @@ h5,
 h6,
 p,
 button {
-    font-family: "Open Sans", sans-serif !important;
-   
+    font-family: "Open Sans", sans-serif !important;  
 }
 
-button{
-    background-color: #66c2ff;
-}
 .cursor_pointer
 {
     cursor: pointer !important;
@@ -147,6 +143,6 @@ button{
         width: 100%;
     }
     button{
-        color: #66c2ff;
+        background-color: #66c2ff;
     }
 }

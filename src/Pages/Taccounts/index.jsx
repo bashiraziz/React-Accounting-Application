@@ -613,19 +613,19 @@ const Taccounts = () => {
         }
     }
 
-    const handleDeleteItemsFromDb = (key, type) => {
-        if (type === "label") {
-            alert("Deleting the item from label at index " + key);
-        }
-        else if (type === "amount") {
-            alert("Deleting the item from amount at index " + key);
-        }
-        else if (type === "dropdown") {
-            alert("Deleting the item from dropdown at index " + key);
-            //Showing the input text box to be shown so that the user can edit drop down value
-            //wait
-        }
-    }
+    // const handleDeleteItemsFromDb = (key, type) => {
+    //     if (type === "label") {
+    //         alert("Deleting the item from label at index " + key);
+    //     }
+    //     else if (type === "amount") {
+    //         alert("Deleting the item from amount at index " + key);
+    //     }
+    //     else if (type === "dropdown") {
+    //         alert("Deleting the item from dropdown at index " + key);
+    //         //Showing the input text box to be shown so that the user can edit drop down value
+    //         //wait
+    //     }
+    // }
 
     const onEditTrigger = (key) => {
         //Show the drop down Edit

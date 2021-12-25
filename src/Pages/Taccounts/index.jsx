@@ -16,54 +16,54 @@ let AccountsData = [
         name: 'Cash - Operating Account',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - Payroll Account',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - Money Market Account',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - User Defined1',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - User Defined2',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - User Defined3',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     },
     {
         name: 'Cash - Petty Cash',
         totalDebit: 0,
         totalCredit: 0,
-        actualCredit: 0,
-        actualDebit: 0
+        TaccountsCredit: 0,
+        TaccountsDebit: 0
     }
 ]
 
-const Actual = () => {
+const Taccounts = () => {
     const [availableOptions, setAvailableOptions] = useState(AccountsData);
 
     //Total Amount of Debit and credit that will be the sum of debit and credit amount of all the accounts
@@ -154,8 +154,8 @@ const Actual = () => {
         let total_debits = 0;
         let total_credits = 0;
         for (let i = 0; i < availableOptions.length; i++) {
-            total_credits = total_credits + availableOptions[i].actualCredit;
-            total_debits = total_debits + availableOptions[i].actualDebit;
+            total_credits = total_credits + availableOptions[i].TaccountsCredit;
+            total_debits = total_debits + availableOptions[i].TaccountsDebit;
         }
         // console.log("Total Amount of Debit is : ", total_debits);
         // console.log("Total Amount of Credit is : ", total_credits);
@@ -308,8 +308,8 @@ const Actual = () => {
                 name: option,
                 totalDebit: 0,
                 totalCredit: 0,
-                actualCredit: 0,
-                actualDebit: 0
+                TaccountsCredit: 0,
+                TaccountsDebit: 0
             }
             setAvailableOptions([...availableOptions, obj]);
 
@@ -386,10 +386,10 @@ const Actual = () => {
                 console.log("Equal What should i do now");
             }
             if (debitTotal > creditTotal) {
-                arr[currentIndex].actualDebit = debitTotal - creditTotal;
+                arr[currentIndex].TaccountsDebit = debitTotal - creditTotal;
             }
             else {
-                arr[currentIndex].actualCredit = creditTotal - debitTotal;
+                arr[currentIndex].TaccountsCredit = creditTotal - debitTotal;
             }
 
             console.log(`The total Debits at position ${currentIndex} and value is : `, arr[currentIndex].totalDebit);
@@ -465,10 +465,10 @@ const Actual = () => {
             //     console.log("Equal What should i do now");
             // }
             if (debitTotal > creditTotal) {
-                arr[currentIndex].actualDebit = debitTotal - creditTotal;
+                arr[currentIndex].TaccountsDebit = debitTotal - creditTotal;
             }
             else {
-                arr[currentIndex].actualCredit = creditTotal - debitTotal;
+                arr[currentIndex].TaccountsCredit = creditTotal - debitTotal;
             }
 
             //Changing The total 
@@ -990,21 +990,21 @@ const Actual = () => {
                                                         <div className="h-normal">
                                                             <div className="row mb-4 text-center">
                                                                 <div className="col-md-6">
-                                                                    {(v.actualDebit > v.actualCredit) ? (
-                                                                        <h4><b>Debit Balance</b> = <b className="text-dark custom_margin_top">{v.actualDebit}</b></h4>
-                                                                        // <h4>Actual <b>Debit</b> in {v.name} :- <b className="text-success mt-4">{v.actualDebit}</b></h4>
+                                                                    {(v.TaccountsDebit > v.TaccountsCredit) ? (
+                                                                        <h4><b>Debit Balance</b> = <b className="text-dark custom_margin_top">{v.TaccountsDebit}</b></h4>
+                                                                        // <h4>Taccounts <b>Debit</b> in {v.name} :- <b className="text-success mt-4">{v.TaccountsDebit}</b></h4>
                                                                     ) : (
                                                                         <h4><b>Debit Balance</b> = <b className="text-dark custom_margin_top">0</b></h4>
-                                                                        // <h4>Actual <b>Debit</b> in {v.name} :- <b className="text-success mt-4">0</b></h4>
+                                                                        // <h4>Taccounts <b>Debit</b> in {v.name} :- <b className="text-success mt-4">0</b></h4>
                                                                     )}
                                                                 </div>
                                                                 <div className="col-md-6">
-                                                                    {(v.actualCredit > v.actualDebit) ? (
-                                                                        <h4><b>Credit Balance</b> = <b className="text-dark custom_margin_top">{v.actualCredit}</b></h4>
-                                                                        // <h4>Actual <b>Credit</b> in {v.name} :- <b className="text-danger mt-4">{v.actualCredit}</b></h4>
+                                                                    {(v.TaccountsCredit > v.TaccountsDebit) ? (
+                                                                        <h4><b>Credit Balance</b> = <b className="text-dark custom_margin_top">{v.TaccountsCredit}</b></h4>
+                                                                        // <h4>Taccounts <b>Credit</b> in {v.name} :- <b className="text-danger mt-4">{v.TaccountsCredit}</b></h4>
                                                                     ) : (
                                                                         <h4><b>Credit Balance</b> = <b className="text-dark custom_margin_top">0</b></h4>
-                                                                        // <h4>Actual <b>Credit</b> in {v.name} :- <b className="text-danger mt-4">0</b></h4>
+                                                                        // <h4>Taccounts <b>Credit</b> in {v.name} :- <b className="text-danger mt-4">0</b></h4>
                                                                     )}
                                                                 </div>
                                                             </div>
@@ -1050,15 +1050,15 @@ const Actual = () => {
                                                                     return <tr key={i}>
                                                                         <th scope="row" className="text-left text-bold mt-3"><h5 className="text-bold"><b>{v.name}</b></h5></th>
                                                                         <td>
-                                                                            {(v.actualCredit < v.actualDebit) ? (
-                                                                                <h6 className="text-right mt-2 text-bold">{v.actualDebit}</h6>
+                                                                            {(v.TaccountsCredit < v.TaccountsDebit) ? (
+                                                                                <h6 className="text-right mt-2 text-bold">{v.TaccountsDebit}</h6>
                                                                             ) : (
                                                                                 <h6 className="text-dark text-right mt-2 text-bold">0</h6>
                                                                             )}
                                                                         </td>
                                                                         <td>
-                                                                            {(v.actualCredit > v.actualDebit) ? (
-                                                                                <h6 className="text-right mt-2 text-bold">{v.actualCredit}</h6>
+                                                                            {(v.TaccountsCredit > v.TaccountsDebit) ? (
+                                                                                <h6 className="text-right mt-2 text-bold">{v.TaccountsCredit}</h6>
                                                                             ) : (
                                                                                 <h6 className="text-dark text-right mt-2 text-bold">0</h6>
                                                                             )}
@@ -1112,4 +1112,4 @@ const Actual = () => {
         </>
     )
 }
-export default Actual;
+export default Taccounts;

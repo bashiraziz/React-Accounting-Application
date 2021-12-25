@@ -46,7 +46,7 @@ const Header = (props) => {
         //             {/* <div className="collapse navbar-collapse" id="navbarNav">
         //                 <ul className="navbar-nav">
         //                     <li className="nav-item">
-        //                         <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
+        //                         <Link className="nav-link active" aria-current="page" to='/'>ChartOfAccounts</Link>
         //                     </li>
         //                     <li className="nav-item">
         //                         <Link className="nav-link" to={`/about`} tabIndex={-1} aria-disabled="true">About</Link>

@@ -199,7 +199,7 @@ const Taccounts = () => {
                     console.log("data=> ", data)
                     ///////////////////////////////Here is the code for sending notifications
                     ///////////////////////////////Here is the code for sending notifications
-                    if (initial == true) {
+                    if (initial === true) {
                         let dateArray = [];
                         for (let i = 0; i < data.length; i++) {
                             var date = new Date(data[i].ProjectEndingDate);
@@ -295,7 +295,7 @@ const Taccounts = () => {
         //Either I have to insert the new element or not.I will check if already a option present it cant be inserted again.
         let insert = true;
         for (let i = 0; i < availableOptions.length; i++) {
-            if (option == availableOptions[i].name) {
+            if (option === availableOptions[i].name) {
                 insert = false;
                 break;
             }
@@ -382,7 +382,7 @@ const Taccounts = () => {
 
             debitTotal = parseInt(debitTotal) + parseInt(debit);
             //In case both are equal
-            if (debitTotal == creditTotal) {
+            if (debitTotal === creditTotal) {
                 console.log("Equal What should i do now");
             }
             if (debitTotal > creditTotal) {
@@ -414,7 +414,7 @@ const Taccounts = () => {
             alert("Please select an option also from the above drop down to submit debit value.")
             return;
         }
-        if (currentLabel == "") {
+        if (currentLabel === "") {
             alert("Please select a Label from the Menu to Submit the value.")
             return;
         }
@@ -449,7 +449,7 @@ const Taccounts = () => {
             let debitTotal = 0;
 
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i].name == currentOption) {
+                if (arr[i].name === currentOption) {
                     creditTotal = creditTotal + arr[i].totalCredit;
                     debitTotal = debitTotal + arr[i].totalDebit;
                     console.log(i);
@@ -479,15 +479,15 @@ const Taccounts = () => {
             setCredit(0);
             setAlertManual(true);
         }
-        if (credit == 0) {
+        if (credit === 0) {
             alert("Please enter any Credit value to submit!");
             return;
         }
-        if (currentOption == "") {
+        if (currentOption === "") {
             alert("Please select an option also from the above drop down to submit Credit value.")
             return;
         }
-        if (currentLabel == "") {
+        if (currentLabel === "") {
             alert("Please select a Label from the Menu to Submit the value.")
             return;
         }
@@ -559,10 +559,10 @@ const Taccounts = () => {
                     setShowDropDownEdit(false);
                 }
             }
-            else if (type == "push_debit") {
+            else if (type === "push_debit") {
                 pushAvailableDebits();
             }
-            else if (type == "push_credit") {
+            else if (type === "push_credit") {
                 pushAvailableCredits();
             }
         }
@@ -642,13 +642,13 @@ const Taccounts = () => {
             <br />
             <div className="container-own">
                 <div className="row">
-                    <div>
+                <div>
                         {/* Tabs navs */}
-                        <ul className="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-                            <li className="nav-item" role="presentation">
+                    <ul className="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                        <li className="nav-item" role="presentation">
                                 <a className="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab" aria-controls="ex3-tabs-1" aria-selected="true" color="black">COA</a>
-                            </li>
-                            <li className="nav-item" role="presentation">
+                        </li>
+                        <li className="nav-item" role="presentation">
                                 <a className="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab" aria-controls="ex3-tabs-2" aria-selected="false">T-Accounts</a>
                             </li>
                         </ul>
@@ -664,7 +664,7 @@ const Taccounts = () => {
                                 <br />
                                 <br />
 
-                                {(availableOptions == "") ? (
+                                {(availableOptions === "") ? (
                                     <h4 className="text-danger mb-4">Currently there are no values in drop down.Enter any value to be appeared in dropdown.</h4>
                                 ) : (
                                     <div className="table-responsive container">
@@ -699,7 +699,7 @@ const Taccounts = () => {
                                                             </td> */}
                                                             <td>
                                                                 {/* If the show drop down state and the current index is true then show. */}
-                                                                {(showDropDownEdit == true && i === currentDropDownSelectedValue) ? (
+                                                                {(showDropDownEdit === true && i === currentDropDownSelectedValue) ? (
                                                                     <input className="form-control textInputAmount" onChange={(e) => setDropDownName(e.target.value)} onKeyDown={(e) => handleEnterKeyPress(e, i, "dropdown")} type="text" />
                                                                 ) : (
                                                                     <h3>{v.name}</h3>
@@ -731,12 +731,12 @@ const Taccounts = () => {
                                     <div className="row">
                                         <div className="container">
                                             <br />
-                                            <h4 className="text-dark text-head">Select the account name from the drop down list located below
-                                                <p className="text-warning text-bold text-center mt-4"> <b>OR</b></p> Input desired account names by navigating to the Add Values Tab located on the left side bar:
+                                            <p className="text-dark text-head p1">Select an account name:
+                                                {/* <p className="text-warning text-bold text-center mt-4"> <b>OR</b></p> Input desired account names by navigating to the Add Values Tab located on the left side bar: */}
                                                 {/* :  <span className="text-danger ml-4">*</span></h4> */}
-                                            </h4>
-                                            <div title="Select the account name from the drop down list located below" className="input-group input-group-md txt-field">
-                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon"></span>
+                                            </p>
+                                            <div  className="input-group input-group-md txt-field">
+                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
                                                 <select style={{ fontSize: "18px", width: "200px", height: "40px" }} value={currentOption}
                                                     onChange={(e) => changingSelectedOption(e.target.value)} className="form-control">
                                                     {["No Selected Value", ...availableOptions].map((v, i) => {
@@ -749,12 +749,12 @@ const Taccounts = () => {
 
                                             <br />
 
-                                            <h4 className="text-dark text-head">
-                                                Select the reference you want to use for this transaction:
-                                            </h4>
+                                            <p className="text-dark text-head p1">
+                                                Select the reference value:
+                                            </p>
 
                                             <div className="input-group input-group-md txt-field">
-                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
+                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon3"></span>
                                                 <select style={{ fontSize: "18px", width: "200px" }} value={currentLabel}
                                                     onChange={(e) => setCurrentLabel(e.target.value)} className="form-control">
                                                     {["Select a Reference Value", ...labels].map((v, i) => {
@@ -781,7 +781,7 @@ const Taccounts = () => {
                                                         type="number"
                                                         placeholder="Enter any debit amount eg: '100' "
                                                         className="form-control txt-field"
-                                                        value={(debit == 0) ? ("Enter any debit amount eg: '100'") : (debit)}
+                                                        value={(debit === 0) ? ("Enter any debit amount eg: '100'") : (debit)}
                                                         onChange={(e) => setDebit(e.target.value)}
                                                         onKeyDown={(e) => handleEnterKeyPress(e, 1, "push_debit")}
                                                     />
@@ -797,7 +797,7 @@ const Taccounts = () => {
                                                         type="number"
                                                         placeholder="Enter any credit amount eg: '10' "
                                                         className="form-control txt-field"
-                                                        value={(credit == 0) ? ("Enter any credit amount eg: '100'") : (credit)}
+                                                        value={(credit === 0) ? ("Enter any credit amount eg: '100'") : (credit)}
                                                         onChange={(e) => setCredit(e.target.value)}
                                                         onKeyDown={(e) => handleEnterKeyPress(e, 1, "push_credit")}
                                                     />
@@ -845,7 +845,7 @@ const Taccounts = () => {
                                                                         <>
                                                                             <tbody className="bg-gradient-upper-table">
 
-                                                                                {(availableDebits.length == 0) ? (
+                                                                                {(availableDebits.length === 0) ? (
                                                                                     <tr>
                                                                                         <th scope="row" className="text-center" style={{ cursor: "pointer" }} onDoubleClick={() => alert("Add Any Reference Label to Edit that")}>Add Ref</th>
                                                                                         <th scope="row" className="text-center" style={{ cursor: "pointer" }} onDoubleClick={() => alert("Add Any Debit Amount to Edit that")}>Add Amount</th>
@@ -1038,7 +1038,7 @@ const Taccounts = () => {
                                                     </thead>
                                                     <>
                                                         <tbody className="bg-gradient">
-                                                            {(availableOptions.length == 0) ? (
+                                                            {(availableOptions.length === 0) ? (
                                                                 <tr>
                                                                     <th scope="row" className="text-center">No Name</th>
                                                                     <th scope="row" className="text-center">No Debit Value</th>

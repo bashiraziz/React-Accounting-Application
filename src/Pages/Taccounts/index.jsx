@@ -569,24 +569,24 @@ const Taccounts = () => {
     }
 
     const deleteAmountValues = (key, type) => {
-        if (type == "debit") {
-            let confirmAction = window.confirm(`Are you sure you want to delete this value`)
-            if (confirmAction) {
+        if (type === "debit") {
+            // let confirmAction = window.confirm(`Are you sure you want to delete this value`)
+            // if (confirmAction) {
+            //     setShowAmount(false);
+            // } else {
+            //     console.log("Disgarded changes");
                 setShowAmount(false);
-            } else {
-                console.log("Disgarded changes");
+            // }
+        }
+        else if (type === "credit") {
+            // let confirmAction = window.confirm(`Are you sure you want to delete this value`)
+            // if (confirmAction) {
+            //     setShowAmount(false);
+            // } else {
+            //     console.log("Disgarded changes");
                 setShowAmount(false);
             }
-        }
-        else if (type == "credit") {
-            let confirmAction = window.confirm(`Are you sure you want to delete this value`)
-            if (confirmAction) {
-                setShowAmount(false);
-            } else {
-                console.log("Disgarded changes");
-                setShowAmount(false);
-            }
-        }
+        // }
     }
 
     //Handling the trigger on pressing button to save edits
@@ -699,7 +699,7 @@ const Taccounts = () => {
                                                             </td> */}
                                                             <td>
                                                                 {/* If the show drop down state and the current index is true then show. */}
-                                                                {(showDropDownEdit == true && i == currentDropDownSelectedValue) ? (
+                                                                {(showDropDownEdit == true && i === currentDropDownSelectedValue) ? (
                                                                     <input className="form-control textInputAmount" onChange={(e) => setDropDownName(e.target.value)} onKeyDown={(e) => handleEnterKeyPress(e, i, "dropdown")} type="text" />
                                                                 ) : (
                                                                     <h3>{v.name}</h3>
@@ -707,7 +707,7 @@ const Taccounts = () => {
                                                             </td>
                                                             <td>
                                                                 {/* If the show drop down state and the current index is true then show. */}
-                                                                {(showDropDownEdit == true && i == currentDropDownSelectedValue) ? (
+                                                                {(showDropDownEdit === true && i == currentDropDownSelectedValue) ? (
                                                                     <button className="btn btn-success" onClick={() => handleButtonKeyPressForEdit(i, "dropdown")}>Save</button>
                                                                 ) : (
                                                                     // Setting the input text box to be shown so that the value can be seen

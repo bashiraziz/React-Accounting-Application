@@ -341,13 +341,13 @@ const Taccounts = () => {
             setOption("");
             setAlertManual(true);
         }
-        if (option == "") {
+        if (option === "") {
             alert("Please enter any text to submit!");
         }
     }
 
     const pushAvailableDebits = () => {
-        if (debit != 0 && currentOption != "") {
+        if (debit != 0 && currentOption !== "") {
             let obj = {
                 selectedOption: currentOption,
                 Debit: debit,
@@ -373,7 +373,7 @@ const Taccounts = () => {
             let debitTotal = 0;
 
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i].name == currentOption) {
+                if (arr[i].name === currentOption) {
                     creditTotal = creditTotal + arr[i].totalCredit;
                     debitTotal = debitTotal + arr[i].totalDebit;
                     console.log(`The total debit value pushed at index ${i} of account named ${arr[i].totalDebit}`, arr[i].totalDebit);
@@ -410,7 +410,7 @@ const Taccounts = () => {
             alert("Please enter any debit value to submit!");
             return;
         }
-        if (currentOption == "") {
+        if (currentOption === "") {
             alert("Please select an option also from the above drop down to submit debit value.")
             return;
         }
@@ -436,7 +436,7 @@ const Taccounts = () => {
     }
 
     const pushAvailableCredits = () => {
-        if (credit != 0 && currentOption != "") {
+        if (credit !== 0 && currentOption !== "") {
             let obj = {
                 selectedOption: currentOption,
                 Credit: credit,
@@ -672,7 +672,7 @@ const Taccounts = () => {
                                             {
                                                 availableOptions.map((v, i) => {
                                                     return <tbody key={i}>
-                                                        {(i == 0) ? (
+                                                        {(i === 0) ? (
                                                             <tr>
                                                                 {/* <th>
                                                                     <h3>#</h3>
@@ -707,7 +707,7 @@ const Taccounts = () => {
                                                             </td>
                                                             <td>
                                                                 {/* If the show drop down state and the current index is true then show. */}
-                                                                {(showDropDownEdit === true && i == currentDropDownSelectedValue) ? (
+                                                                {(showDropDownEdit === true && i === currentDropDownSelectedValue) ? (
                                                                     <button className="btn btn-success" onClick={() => handleButtonKeyPressForEdit(i, "dropdown")}>Save</button>
                                                                 ) : (
                                                                     // Setting the input text box to be shown so that the value can be seen
@@ -736,7 +736,7 @@ const Taccounts = () => {
                                                 {/* :  <span className="text-danger ml-4">*</span></h4> */}
                                             </h4>
                                             <div title="Select the account name from the drop down list located below" className="input-group input-group-md txt-field">
-                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
+                                                <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon"></span>
                                                 <select style={{ fontSize: "18px", width: "200px", height: "40px" }} value={currentOption}
                                                     onChange={(e) => changingSelectedOption(e.target.value)} className="form-control">
                                                     {["No Selected Value", ...availableOptions].map((v, i) => {
@@ -749,15 +749,15 @@ const Taccounts = () => {
 
                                             <br />
 
-                                            <h4 className="text-primary text-bold">
-                                                Select the label you want to insert with the value :
+                                            <h4 className="text-dark text-head">
+                                                Select the reference you want to use for this transaction:
                                             </h4>
 
                                             <div className="input-group input-group-md txt-field">
                                                 <span className="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
-                                                <select style={{ fontSize: "18px", width: "200px", color: "blue" }} value={currentLabel}
+                                                <select style={{ fontSize: "18px", width: "200px" }} value={currentLabel}
                                                     onChange={(e) => setCurrentLabel(e.target.value)} className="form-control">
-                                                    {["No Selected Label", ...labels].map((v, i) => {
+                                                    {["Select a Reference Value", ...labels].map((v, i) => {
                                                         return <option value={v} key={i}>
                                                             {v}
                                                         </option>

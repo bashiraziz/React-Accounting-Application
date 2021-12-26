@@ -570,23 +570,23 @@ const Taccounts = () => {
 
     const deleteAmountValues = (key, type) => {
         if (type === "debit") {
-            // let confirmAction = window.confirm(`Are you sure you want to delete this value`)
-            // if (confirmAction) {
-            //     setShowAmount(false);
-            // } else {
-            //     console.log("Disgarded changes");
+            let confirmAction = window.confirm(`Are you sure you want to delete this value`)
+            if (confirmAction) {
                 setShowAmount(false);
-            // }
-        }
-        else if (type === "credit") {
-            // let confirmAction = window.confirm(`Are you sure you want to delete this value`)
-            // if (confirmAction) {
-            //     setShowAmount(false);
-            // } else {
-            //     console.log("Disgarded changes");
+            } else {
+                console.log("Disgarded changes");
                 setShowAmount(false);
             }
-        // }
+        }
+        else if (type === "credit") {
+            let confirmAction = window.confirm(`Are you sure you want to delete this value`)
+            if (confirmAction) {
+                setShowAmount(false);
+            } else {
+                console.log("Disgarded changes");
+                setShowAmount(false);
+            }
+        }
     }
 
     //Handling the trigger on pressing button to save edits
